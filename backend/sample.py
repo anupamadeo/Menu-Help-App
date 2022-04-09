@@ -14,7 +14,6 @@ import requests
 import connection
 import questio_answer
 
-
 file_path = 'img1.jpg'
 file = file_path[:-4]
 file_folder_path = '/Users/anupamadeo/project/mtechproject/backend/images/'
