@@ -294,7 +294,7 @@ def main():
     connection.use_db(cursor=cur)
     connection.create_table(cursor=cur)
     connection.insert_values(connection=conn, cursor=cur, menu=menu)
-    print('_______')
+    # print('_______')
     question = input('enter question : ')
 
     sql_query = questio_answer.find_query(
