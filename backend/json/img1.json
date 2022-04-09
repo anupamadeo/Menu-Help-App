@@ -1,0 +1,211 @@
+{
+      "language": "en",
+      "textAngle": 0.0,
+      "orientation": "Up",
+      "regions": [
+            {
+                  "boundingBox": "268,154,609,992",
+                  "lines": [
+                        {
+                              "boundingBox": "268,154,609,128",
+                              "words": [
+                                    {
+                                          "boundingBox": "268,155,284,126",
+                                          "text": "FAST"
+                                    },
+                                    {
+                                          "boundingBox": "566,154,311,128",
+                                          "text": "FOOD"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "281,316,571,44",
+                              "words": [
+                                    {
+                                          "boundingBox": "281,316,571,44",
+                                          "text": "RESTAURANT"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "477,473,234,69",
+                              "words": [
+                                    {
+                                          "boundingBox": "477,473,234,69",
+                                          "text": "BURGER"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "501,591,167,32",
+                              "words": [
+                                    {
+                                          "boundingBox": "501,591,55,24",
+                                          "text": "Fish"
+                                    },
+                                    {
+                                          "boundingBox": "567,591,101,32",
+                                          "text": "Burger"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "501,651,213,32",
+                              "words": [
+                                    {
+                                          "boundingBox": "501,651,102,25",
+                                          "text": "Cheese"
+                                    },
+                                    {
+                                          "boundingBox": "614,651,100,32",
+                                          "text": "Burger"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "501,710,217,33",
+                              "words": [
+                                    {
+                                          "boundingBox": "501,710,106,25",
+                                          "text": "Chicken"
+                                    },
+                                    {
+                                          "boundingBox": "618,710,100,33",
+                                          "text": "Burger"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "501,770,202,32",
+                              "words": [
+                                    {
+                                          "boundingBox": "501,770,91,32",
+                                          "text": "Vegan"
+                                    },
+                                    {
+                                          "boundingBox": "603,770,100,32",
+                                          "text": "Burger"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "477,880,169,66",
+                              "words": [
+                                    {
+                                          "boundingBox": "477,880,169,66",
+                                          "text": "PIZZA"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "501,999,182,28",
+                              "words": [
+                                    {
+                                          "boundingBox": "501,999,84,28",
+                                          "text": "Meat"
+                                    },
+                                    {
+                                          "boundingBox": "597,999,86,27",
+                                          "text": "Pizza"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "501,1058,199,36",
+                              "words": [
+                                    {
+                                          "boundingBox": "501,1058,101,36",
+                                          "text": "Vegan"
+                                    },
+                                    {
+                                          "boundingBox": "614,1058,86,28",
+                                          "text": "Pizza"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "501,1118,209,28",
+                              "words": [
+                                    {
+                                          "boundingBox": "501,1118,111,28",
+                                          "text": "Classic"
+                                    },
+                                    {
+                                          "boundingBox": "624,1118,86,28",
+                                          "text": "Pizza"
+                                    }
+                              ]
+                        }
+                  ]
+            },
+            {
+                  "boundingBox": "893,589,66,558",
+                  "lines": [
+                        {
+                              "boundingBox": "899,589,39,28",
+                              "words": [
+                                    {
+                                          "boundingBox": "899,589,39,28",
+                                          "text": "$5"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "893,649,60,28",
+                              "words": [
+                                    {
+                                          "boundingBox": "893,649,60,28",
+                                          "text": "$20"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "897,708,53,28",
+                              "words": [
+                                    {
+                                          "boundingBox": "897,708,53,28",
+                                          "text": "$15"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "900,768,59,28",
+                              "words": [
+                                    {
+                                          "boundingBox": "900,768,59,28",
+                                          "text": "$20"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "901,997,43,31",
+                              "words": [
+                                    {
+                                          "boundingBox": "901,997,43,31",
+                                          "text": "$5"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "899,1056,60,31",
+                              "words": [
+                                    {
+                                          "boundingBox": "899,1056,60,31",
+                                          "text": "$10"
+                                    }
+                              ]
+                        },
+                        {
+                              "boundingBox": "899,1116,42,31",
+                              "words": [
+                                    {
+                                          "boundingBox": "899,1116,42,31",
+                                          "text": "$5"
+                                    }
+                              ]
+                        }
+                  ]
+            }
+      ]
+}

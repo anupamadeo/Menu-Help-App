@@ -1,0 +1,5 @@
+dish_type,bbox,dish_type_bb1,dish_type_bb2,dish_type_bb3,dish_type_bb4
+FAST FOOD ,"268,154,609,128",268,154,609,128
+RESTAURANT ,"281,316,571,44",281,316,571,44
+BURGER ,"477,473,234,69",477,473,234,69
+PIZZA ,"477,880,169,66",477,880,169,66

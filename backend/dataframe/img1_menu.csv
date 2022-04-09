@@ -1,0 +1,8 @@
+dish,price,float_price,dish_type
+fish burger,$5 ,5.0,burger
+cheese burger,$20 ,20.0,burger
+chicken burger,$15 ,15.0,burger
+vegan burger,$20 ,20.0,burger
+meat pizza,$5 ,5.0,pizza
+vegan pizza,$10 ,10.0,pizza
+classic pizza,$5 ,5.0,pizza
