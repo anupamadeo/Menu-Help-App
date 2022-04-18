@@ -14,7 +14,7 @@ from kivy.properties import ObjectProperty
 from kivy.properties import BooleanProperty, StringProperty
 import sample
 import connection
-import questio_answer
+import question_answer
 import pandas as pd
 
 conn = None
@@ -74,7 +74,7 @@ class ThirdWindow(Screen):
     def btn(self):
         self.data_items = ""
         question = self.query.text
-        sql_query = questio_answer.find_query(menu, cur, question)
+        sql_query = question_answer.find_query(menu, cur, question)
         result = connection.execute_query(cur, sql_query)
         print('required answer is : ')
         data = ' '
