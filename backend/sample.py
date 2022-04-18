@@ -13,6 +13,8 @@ from PIL import Image
 import requests
 import connection
 import questio_answer
+import warnings
+warnings.filterwarnings("ignore")
 
 file_path = 'img1.jpg'
 file = file_path[:-4]
@@ -281,29 +283,30 @@ def get_dish_types(menu_path, menu_dish_type):
         menu_path, index=False)
 
 
-def main():
-    get_ocr(file_path)
-    get_dataframe(ner_model_path, json_path, menu_dish,
-                  menu_price, menu_dish_type)
-    make_dataframe(menu_dish, menu_price, menu_dish_type)
-    get_dish_types(menu_path, menu_dish_type)
-    menu = pd.read_csv(menu_path)
-    conn, cur = connection.create_connection()
-    connection.create_database(cursor=cur)
-    connection.use_db(cursor=cur)
-    connection.create_table(cursor=cur)
-    connection.insert_values(connection=conn, cursor=cur, menu=menu)
-    # print('_______')
-    question = input('enter question : ')
+# def sample():
+#     get_ocr(file_path)
+#     get_dataframe(ner_model_path, json_path, menu_dish,
+#                   menu_price, menu_dish_type)
+#     make_dataframe(menu_dish, menu_price, menu_dish_type)
+#     get_dish_types(menu_path, menu_dish_type)
+#     menu = pd.read_csv(menu_path)
+#     conn, cur = connection.create_connection()
+#     connection.create_database(cursor=cur)
+#     connection.use_db(cursor=cur)
+#     connection.create_table(cursor=cur)
+#     connection.insert_values(connection=conn, cursor=cur, menu=menu)
+#     # print('_______')
+#     question = input('enter question : ')
 
-    sql_query = questio_answer.find_query(
-        menu=menu, cursor=cur, question=question)
-    result = connection.execute_query(cur, sql_query)
-    for i in result:
-        print(i)
-    connection.delete_table(cur)
-    connection.delete_database(cur)
+#     sql_query = questio_answer.find_query(
+#         menu=menu, cursor=cur, question=question)
+#     result = connection.execute_query(cur, sql_query)
+#     print('required answer is : ')
+#     for i in result:
+#         print(i)
+#     connection.delete_table(cur)
+#     connection.delete_database(cur)
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

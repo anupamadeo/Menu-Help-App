@@ -22,7 +22,7 @@ where dish_type = ______ and float_price =  (select min(float_price) from menu w
 }
 
 dict3 = {
-    'which is the cheapest dish':  "select dish from menu where price= min(price)",
+    'which is the cheapest dish':  "select dish from menu where float_price= (select min(float_price) from menu)",
     'What are the options available at the restaurant': "select distinct dish_type from menu"
 
 }
@@ -72,7 +72,7 @@ def find_query(menu, cursor, question):
         extracted_entity = str(ent.label_)
 
         extracted_dish = " ".join(extracted_dish.split())
-    print('extracted entity : ', extracted_entity)
+    #print('extracted entity : ', extracted_entity)
 
     tokens = user_question.split(' ')
     if (('item' in tokens or 'dish' in tokens) and ('least' in tokens or 'cheapest' in tokens or 'lowest' in tokens)):
@@ -113,5 +113,6 @@ def find_query(menu, cursor, question):
         user_question, predefined_questions)
 
     final_dict = {**modified_dict1, **modified_dict2, **modified_dict3}
-    print('final dict question ', final_dict[question])
+    print('final pre-defined question : ', question)
+    print('final dict query ', final_dict[question])
     return final_dict[question]

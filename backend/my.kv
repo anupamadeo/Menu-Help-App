@@ -1,0 +1,352 @@
+
+<P>:
+    Label:
+        text: 'Image is selected and being processed'
+        size_hint: .6,.2
+        pos_hint:{"x" :0.2, "y":0.6}
+
+    Label:
+        text: 'You can now ask queries about image'
+        size_hint: .6,.2
+        pos_hint:{"x" :0.2, "y":0.5}
+
+    Label:
+        text: 'press outside to exit'
+        size_hint: .6,.2
+        pos_hint:{"x" :0.2, "y":0.4}
+
+<P1>:
+    Label:
+        text: 'Thank you for using the app'
+        size_hint: .6,.2
+        pos_hint:{"x" :0.2, "y":0.6}
+
+    Label:
+        text: 'Hope to see you again soon'
+        size_hint: .6,.2
+        pos_hint:{"x" :0.2, "y":0.5}
+
+    Button:
+        text: 'ok'
+        size_hint: .4,.2
+        pos_hint:{"x" :0.315, "y":0.2}
+
+        on_press:
+            root.remove_connection()
+        
+        on_release:
+            app.stop()
+
+
+
+
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+
+<MainWindow>:
+    name: "first"
+    canvas:
+        Color:
+            rgb: [21/255,19/255,43/255]
+        Rectangle:
+            pos : self.pos
+            size : self.size
+    FloatLayout:
+        GridLayout:
+            pos_hint : {'center_x' :0.5,'center_y' :0.5}
+            size_hint: None,None
+            
+            cols : 3
+            FloatLayout:
+                GridLayout:
+                    pos_hint : {'center_x' :0.7,'center_y' :0.5}
+                    size_hint: None,None
+                    size : 760,480
+                    cols : 1
+                    row_force_default :True
+                    row_default_height : 135
+                    GridLayout:
+                        cols :1
+                        row_force_default :True
+                        row_default_height : 45
+
+                        Label:
+                            markup:True
+                            font_size :32
+                            text: "Restaurant Menu Help App"
+                            halign: 'left'
+
+                        Label:
+                            text: "A tool to answer all your menu related queries"
+                            font_name : "Arial"
+                            font_size: 16
+                            halign:"left"
+                    FloatLayout:
+                        Image:
+                            pos_hint : {'center_x' :0.5,'center_y' :0.5}
+                            source: "/Users/anupamadeo/project/mtechproject/backend/images/img1.jpg"
+                            size:  450,250
+                            keep_ratio :True
+
+            
+
+                    GridLayout:
+                        cols :1
+                        row_force_default :True
+                        row_default_height : 35
+                       
+                        padding  : 250,70,250,70
+                            
+
+
+                        Button:
+                        
+                            font_name: "Arial"
+                            font_size: 16
+                            text: "Lets Get started"
+                            background_color :0.,0,0,0
+                            pos: self.pos
+                        
+                            canvas.before:
+                                
+                                Color:
+                                    rgba:[255/255,47/255,204/255,1]
+                                RoundedRectangle:
+                                    pos : self.pos
+                                    size: self.size
+                                
+                                
+                                        
+
+                            on_release:
+                                app.root.current ="second"
+                                root.manager.transition.direction = 'left'
+
+
+
+
+
+
+
+
+
+<SecondWindow>
+    
+    name:"second"
+    canvas:
+        Color:
+            rgb: [21/255,19/255,43/255]
+        Rectangle:
+            pos : self.pos
+            size : self.size
+    FloatLayout:
+        GridLayout:
+            pos_hint : {'center_x' :0.5,'center_y' :0.5}
+            size_hint: None,None
+            
+            cols : 3
+            FloatLayout:
+                GridLayout:
+                    pos_hint : {'center_x' :0.7,'center_y' :0.5}
+                    size_hint: None,None
+                    size : 760,480
+                    cols : 1
+                    row_force_default :True
+                    row_default_height : 75
+                    GridLayout:
+                        cols :1
+                        row_force_default :True
+                        row_default_height : 45
+
+                        Label:
+                            markup:True
+                            font_size :16
+                            text: "Take the image you want to query"
+                            halign: 'left'
+
+                        
+                    FloatLayout:
+                        pos_hint : {'center_x' :0.5,'center_y' :0.5}
+                        
+                        Image:
+                            id: image1
+                            pos_hint : {'center_x' :0.5,'center_y' :0.5}
+                            size_hint: None,None
+                            source: " /Users/anupamadeo/project/mtechproject/backend/images/img1.jpg"
+                            
+                            keep_ratio :True
+                            allow_stretch : False
+                    GridLayout:
+                        cols :1
+                        row_force_default :True
+                        row_default_height : 35
+                       
+                        padding  : 250,70,250,70
+                        
+                    
+                        Button:
+                        
+                            font_name: "Arial"
+                            font_size: 16
+                            text: "select image"
+                            background_color :0.,0,0,0
+                            pos: self.pos
+                        
+                            canvas.before:
+                                
+                                Color:
+                                    rgba:[255/255,47/255,204/255,1]
+                                RoundedRectangle:
+                                    pos : self.pos
+                                    size: self.size
+                            on_press:
+                                app.root.current = 'third'
+                                root.manager.transition.direction ='left'
+                                root.next() 
+
+                            on_release :
+                                root.image_process(image1.source)                              
+
+            
+
+                    
+                            
+
+
+                         
+<ThirdWindow>:
+    query:query
+    answer:answer
+    
+
+    name:"third"
+    canvas:
+        Color:
+            rgb: [21/255,19/255,43/255]
+        Rectangle:
+            pos : self.pos
+            size : self.size
+    FloatLayout:
+        GridLayout:
+            pos_hint : {'center_x' :0.5,'center_y' :0.5}
+            size_hint: None,None
+            
+            cols : 3
+            FloatLayout:
+                GridLayout:
+                    pos_hint : {'center_x' :0.7,'center_y' :0.5}
+                    size_hint: None,None
+                    size : 760,480
+                    cols : 1
+                    row_force_default :True
+                    row_default_height : 75
+                    GridLayout:
+                        cols :2
+                        row_force_default :True
+                        row_default_height : 45
+
+                        Label:
+                            markup:True
+                            font_size :16
+                            text: "Please enter your query here"
+                            halign: 'left'
+                        
+                        Label:
+                            markup:True
+                            font_size :16
+                            text: "The answer:"
+                            halign: 'left'
+
+
+                        TextInput:
+                            id: query
+                            multiline:False
+                        
+                        Label:
+                            id : answer
+                            markup:True
+                            font_size :16
+                            text: root.data_items
+                            halign: 'left'
+               
+                    GridLayout:
+                        cols :1
+                        row_force_default :True
+                        row_default_height : 35
+                       
+                        padding  : 250,70,250,70
+                        
+                    
+                        Button:
+                        
+                            font_name: "Arial"
+                            font_size: 16
+                            text: "submit question"
+                            background_color :0.,0,0,0
+                            pos: self.pos
+                        
+                            canvas.before:
+                                
+                                Color:
+                                    rgba:[255/255,47/255,204/255,1]
+                                RoundedRectangle:
+                                    pos : self.pos
+                                    size: self.size
+                            on_press:
+                                root.btn()
+
+
+                    GridLayout:
+                        cols :2
+                        row_force_default :True
+                        row_default_height : 35
+                       
+                        padding  : 250,70,250,70    
+                        Button:
+                        
+                            font_name: "Arial"
+                            font_size: 16
+                            text: "want to ask more"
+                            background_color :0.,0,0,0
+                            pos: self.pos
+                            pos_hint : {'x':.1,'y':.2}
+                        
+                            canvas.before:
+                                
+                                Color:
+                                    rgba:[255/255,47/255,204/255,1]
+                                RoundedRectangle:
+                                    pos : self.pos
+                                    size: self.size
+                            on_press:
+                                root.btn1()
+
+                        Button:
+                        
+                            font_name: "Arial"
+                            font_size: 16
+                            text: "Done querying"
+                            background_color :0.,0,0,0
+                            pos: self.pos
+                            pos_hint : {'x':.7,'y':.2}
+                        
+                            canvas.before:
+                                
+                                Color:
+                                    rgba:[255/255,47/255,204/255,1]
+                                RoundedRectangle:
+                                    pos : self.pos
+                                    size: self.size
+                            
+                            on_release:
+                                root.next1()
+
+
+                
+
+
+
+
+
