@@ -43,6 +43,7 @@ def insert_values(connection, cursor, menu):
 
 
 def execute_query(cursor, query):
+    print("query is : ", query)
     cursor.execute(query)
     result = cursor.fetchall()
     return result

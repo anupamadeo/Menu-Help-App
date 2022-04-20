@@ -12,6 +12,7 @@ from kivy.uix.image import Image
 from kivy.uix.textinput import TextInput
 from kivy.properties import ObjectProperty
 from kivy.properties import BooleanProperty, StringProperty
+from kivy.uix.filechooser import FileChooser
 import sample
 import connection
 import question_answer
@@ -20,6 +21,7 @@ import pandas as pd
 conn = None
 cur = None
 menu = None
+img_file_name = ""
 
 file_path = 'img1.jpg'
 file = file_path[:-4]
@@ -40,29 +42,47 @@ class MainWindow(Screen):
 
 
 class SecondWindow(Screen):
+    pass
 
-    def next(self):
-        show_popup().open()
 
-    def image_process(self,):
+class MiddleWindow(Screen):
+
+    def image_process(self):
+        print('image processing started.........')
+        global conn, menu, cur
+
         print('file_path : ', file_path)
         sample.get_ocr(file_path)
         file = file_path[-8:-4]
         print('file : ', file)
 
-    def image_process(self, file_path):
-        global conn, menu, cur
+        sample.get_ocr(img_file_name)
+        file = file_path[-8:-4]
+        print('the name of the file is : ', file)
         sample.get_dataframe(ner_model_path, json_path,
                              menu_dish, menu_price, menu_dish_type)
         sample.make_dataframe(menu_dish, menu_price, menu_dish_type)
         sample.get_dish_types(menu_path, menu_dish_type)
         menu = pd.read_csv(menu_path)
         conn, cur = connection.create_connection()
+        print('connection : ', conn, ' cursor  =  ', cur)
         connection.create_database(cursor=cur)
         connection.use_db(cursor=cur)
         connection.create_table(cursor=cur)
         connection.insert_values(connection=conn, cursor=cur, menu=menu)
         print('_______')
+
+    def selected(self, filename):
+        global img_file_name
+        try:
+            self.ids.image2.source = filename[0]
+            img_file_name = filename[0]
+
+        except:
+            pass
+
+    def next(self):
+        show_popup().open()
 
 
 class ThirdWindow(Screen):
