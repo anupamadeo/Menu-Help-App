@@ -86,7 +86,7 @@ WindowManager:
                     FloatLayout:
                         Image:
                             pos_hint : {'center_x' :0.5,'center_y' :0.5}
-                            source: "/Users/anupamadeo/project/mtechproject/backend/images/img1.jpg"
+                            source: "/Users/anupamadeo/project/mtechproject/backend/images/12.jpg"
                             size:  450,250
                             keep_ratio :True
 
@@ -124,17 +124,8 @@ WindowManager:
                                 app.root.current ="second"
                                 root.manager.transition.direction = 'left'
 
-
-
-
-
-
-
-
-
-<SecondWindow>
-    
-    name:"second"
+<SecondWindow>:
+    name: "second"
     canvas:
         Color:
             rgb: [21/255,19/255,43/255]
@@ -154,7 +145,7 @@ WindowManager:
                     size : 760,480
                     cols : 1
                     row_force_default :True
-                    row_default_height : 75
+                    row_default_height : 135
                     GridLayout:
                         cols :1
                         row_force_default :True
@@ -162,39 +153,34 @@ WindowManager:
 
                         Label:
                             markup:True
-                            font_size :16
-                            text: "Take the image you want to query"
+                            font_size :32
+                            text: "Select the image you want to query"
                             halign: 'left'
 
                         
                     FloatLayout:
-                        pos_hint : {'center_x' :0.5,'center_y' :0.5}
-
-
-                        
-
-                        
                         Image:
-                            id: image1
                             pos_hint : {'center_x' :0.5,'center_y' :0.5}
-                            size_hint: None,None
-                            source: ""
-                            
+                            source: "/Users/anupamadeo/project/mtechproject/backend/images/12.jpg"
+                            size:  450,250
                             keep_ratio :True
-                            allow_stretch : False
+
+            
+
                     GridLayout:
                         cols :1
                         row_force_default :True
                         row_default_height : 35
                        
                         padding  : 250,70,250,70
-                        
-                    
+                            
+
+
                         Button:
                         
                             font_name: "Arial"
                             font_size: 16
-                            text: "select image"
+                            text: "Click to select"
                             background_color :0.,0,0,0
                             pos: self.pos
                         
@@ -205,14 +191,23 @@ WindowManager:
                                 RoundedRectangle:
                                     pos : self.pos
                                     size: self.size
-                            on_press:
+                                
+                                
+                                        
 
-                                 
+                            on_release:
+                                app.root.current ="middle"
+                                root.manager.transition.direction = 'left'
 
-                            on_release :
-                                  
-                                app.root.current = 'middle'
-                                root.manager.transition.direction ='left'
+
+
+
+
+
+
+
+
+
                                    
 
                                                 
