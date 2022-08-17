@@ -4,7 +4,7 @@ There are several apps available for selecting restaurants based on cuisine or l
 
 Hardly any tools available that would help you select what you want to eat without going through entire menu.
 
-A project is about building a tool that would save time and effort of reading the entire menu just to select what you want to eat.
+This project is about building a tool that would save time and effort of reading the entire menu just to select what you want to eat.
 
 A tool that would quickly answer queries such as What is the price of the dish?  Or What is the cheapest item on the menu?
 
