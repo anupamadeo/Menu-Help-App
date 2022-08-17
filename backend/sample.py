@@ -34,8 +34,8 @@ ner_model_path = '/Users/anupamadeo/project/mtechproject/backend/ner_model'
 
 def get_ocr(file_payth):
 
-    endpoint = 'https://vision4anuml.cognitiveservices.azure.com/'
-    subscription_key = 'f933b7510ed0489aad076201df94fedb'
+    endpoint = ''
+    subscription_key = ''
     ocr_url = endpoint + "vision/v3.1/ocr"
 
     image_path = file_path
@@ -283,30 +283,3 @@ def get_dish_types(menu_path, menu_dish_type):
         menu_path, index=False)
 
 
-# def sample():
-#     get_ocr(file_path)
-#     get_dataframe(ner_model_path, json_path, menu_dish,
-#                   menu_price, menu_dish_type)
-#     make_dataframe(menu_dish, menu_price, menu_dish_type)
-#     get_dish_types(menu_path, menu_dish_type)
-#     menu = pd.read_csv(menu_path)
-#     conn, cur = connection.create_connection()
-#     connection.create_database(cursor=cur)
-#     connection.use_db(cursor=cur)
-#     connection.create_table(cursor=cur)
-#     connection.insert_values(connection=conn, cursor=cur, menu=menu)
-#     # print('_______')
-#     question = input('enter question : ')
-
-#     sql_query = questio_answer.find_query(
-#         menu=menu, cursor=cur, question=question)
-#     result = connection.execute_query(cur, sql_query)
-#     print('required answer is : ')
-#     for i in result:
-#         print(i)
-#     connection.delete_table(cur)
-#     connection.delete_database(cur)
-
-
-# if __name__ == "__main__":
-#     main()
