@@ -1,4 +1,4 @@
-# mtechproject
+# Menu Help App
 
 There are several apps available for selecting restaurants based on cuisine or location.
 
