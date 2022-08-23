@@ -12,7 +12,7 @@ It tries to achieve this by extracting dish names and prices from the menu, mapp
 
 The user-facing tool built as part of this project is aimed to quickly find out answers to common menu related questions
 
-This tool will be written as a mobile app, for smartphones that can take pictures, and have internet connection to communicate with the backend service
+
 
 The purpose of this project is to:
   Create A map of DISH and PRICE from the extracted text of the menu image
